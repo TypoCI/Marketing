@@ -1,18 +1,14 @@
----
-title: Rails Performance Monitoring as part of CI
----
-
 <script type="application/ld+json">
   {
     "@context": "http://schema.org/",
     "@type": "Product",
-    "name": "PigCI",
-    "image": "<%= image_path('logo_pigci.svg') %>",
-    "description": "Track your apps performance via your Test Suite & stop slow downs before they're deployed",
-    "sku": "pigci-early-bird",
+    "name": "Typo CI",
+    "image": "<%= image_path('typo-ci-logo.png') %>",
+    "description": "Check your code for common spelling mistakes and correct them before you merge them",
+    "sku": "typo-ci-early-bird",
     "brand": {
       "@type": "Thing",
-      "name": "PigCI"
+      "name": "Typo CI"
     },
     "review": {
       "@type": "Review",
@@ -35,7 +31,7 @@ title: Rails Performance Monitoring as part of CI
       "@type": "Offer",
       "priceCurrency": "USD",
       "price": "0.00",
-      "url": "https://pigci.com/",
+      "url": "https://github.com/marketplace/typo-ci",
       "priceValidUntil": "2020-01-01",
       "availability": "http://schema.org/InStock",
       "seller": {
@@ -46,121 +42,50 @@ title: Rails Performance Monitoring as part of CI
   }
 </script>
 
-<header class="jumbotron jumbotron-fluid">
-  <div class="container text-center pigci-section-hero">
-    <h1 class="mb-3">Rails Performance Monitoring as part of CI</h1>
+<section class="jumbotron jumbotron--why-correct-spelling-is-amazing">
+  <h1>Spell Check Your Commits</h1>
 
-    <div class="row">
-      <div class="col-12 col-md-8 offset-md-2">
-        <p class="mb-8 h4">Track your apps performance via your Test Suite &amp; stop slow downs before they're deployed</p>
-      </div>
-    </div>
+  <ul class="jumbotron__section product_summary">
+    <li class="product_summary__point">Check your code
+      <em>for common spelling mistakes.</em>
+    </li>
+    <li class="product_summary__point">Correct typos
+      <em>before you merge them.</em>
+    </li>
+    <li class="product_summary__point">Slay
+      <em>your spelling dragons. 🐲</em>
+    </li>
+  </ul>
 
-    <%= link_to(
-      'Contribute via GitHub',
-      'https://github.com/PigCI/pig-ci-rails',
-      class: 'btn btn-primary mb-2',
-      target: '_blank', rel: 'noopener'
-    ) %>
-
-    <div class="pigci-illustration-bacon"></div>
-    <div class="pigci-illustration-tail"></div>
+  <div class="jumbotron__actions">
+    <%= link_to 'Get Started', 'https://github.com/marketplace/typo-ci', class: 'btn btn-primary' %>
+    <%= link_to "Read Documentation", '/documentation', class: 'btn btn-outline-primary mx-2' %>
   </div>
-</header>
+</section>
 
-<section class="container pigci-container-sp  mb-0 text-center">
-
+<section class="jumbotron jumbotron--how_it_works how_it_works">
   <h2>How it works</h2>
-  <div class="pigci-hr pigci-hr-tail mb-8">
-    <div class="left"></div>
-    <% 8.times do %>
-      <div class="middle"></div>
-    <% end %>
-    <div class="right"></div>
-  </div>
 
-  <div class="row">
-    <div class="offset-md-1 col-md-5 mb-8">
-      <h3>Install the Gem</h3>
-      <div class="pigci-hr pigci-hr-wiggle mb-3">
-        <div class="left"></div>
-        <% 4.times do %>
-          <div class="middle"></div>
-        <% end %>
-        <div class="right"></div>
-      </div>
-      <p class="text-left">Add our gem to your test suite, every time you run your test suite the gem will monitor your app &amp; log metrics such as database requests and memory usage.</p>
+  <div class="jumbotron__section how_it_works__steps">
+    <div class="how_it_works__step">
+      <h3>Add on GitHub</h3>
+      <p>Install the App via the GitHub Marketplace, Typo CI will do the rest from there.</p>
     </div>
-    <div class="col-md-5 mb-8">
-      <h3>See results</h3>
-      <div class="pigci-hr pigci-hr-wiggle mb-3">
-        <div class="left"></div>
-        <% 3.times do %>
-          <div class="middle"></div>
-        <% end %>
-        <div class="right"></div>
-      </div>
-      <p class="text-left">Commits that exceed a normal threshold will cause the test suite to fail, you can then investigate by reviewing the output.</p>
-    </div>
-  </div>
-  
-  <div class="card-deck card-deck--pricing text-center">
-    <div class="card pigci-card-primary">
-      <div class="card-body">
-        <h3 class="mb-2 h3">Adding the Gem</h3>
-        <p>Add the gem to your Gemfile within a test group, so it'll only run when you run the test suite:</p>
-        <div class="text-left mb-5">
-<% code("ruby") do %>
-# Gemfile
-group :test do
-  gem 'pig-ci-rails'
-end
-<% end %>
-        </div>
-        <h3 class="mb-2 h3">Configuring thresholds</h3>
-        <p>You can change the thresholds, when your test suite exceeds these it will fail.</p>
-
-        <div class="text-left">
-<% code("ruby") do %>
-# spec/rails_helper.rb
-require 'pig_ci'
-PigCI.start do |config|
-  # Maximum memory in megabytes
-  config.thresholds.memory = 350
-
-  # Maximum time per a HTTP request
-  config.thresholds.request_time = 250
-
-  # Maximum database calls per a request
-  config.thresholds.database_request = 35
-end if RSpec.configuration.files_to_run.count > 1
-<% end %>
-        </div>
-      </div>
+    <div class="how_it_works__step">
+      <h3>See Results</h3>
+      <p>Typo CI will start checking any new commits for spelling mistakes and typos. Easy!</p>
     </div>
   </div>
 </section>
 
-<section class="container pigci-container-sp text-center">
-  <h2>Supported Frameworks</h2>
-  <div class="pigci-hr pigci-hr-tail mb-8">
-    <div class="left"></div>
-    <% 8.times do %>
-      <div class="middle d-none d-sm-block"></div>
-    <% end %>
-    <% 8.times do %>
-      <div class="middle"></div>
-    <% end %>
-    <div class="right"></div>
+<section class="jumbotron jumbotron--ready-to-start">
+  <h2>Ready to start?</h2>
+
+  <div class="jumbotron__section">
+    <p>Typo CI is a GitHub integration, so you can get setup in just a few minutes.</p>
   </div>
 
-  <div class="row mb-8">
-    <div class="col-lg-3 offset-lg-3">
-      <div class="pigci-logo-rails mb-2"></div>
-      <h3 class="mb-4">Ruby on Rails</h3>
-    </div>
-    <div class="col-lg-3 align-self-center">
-      <p class="text-left">PigCI currently supports Ruby on Rails, tested via Rspec.</p>
-    </div>
+  <div class="jumbotron__actions">
+    <%= link_to 'Get Started', 'https://github.com/marketplace/typo-ci', class: 'btn btn-primary' %>
   </div>
 </section>

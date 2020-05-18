@@ -1,0 +1,48 @@
+<div class="footer mt-4" id="footer" data-turbolinks-permanent>
+  <footer class="container footer__grid">
+    <div class="footer__links">
+      <div class="h4">Product</div>
+
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to 'Add via GitHub Marketplace', 'https://github.com/marketplace/typo-ci', target: '_blank', rel: 'noopener' %>
+        </li>
+        <li>
+          <%= link_to 'Documentation', '/documentation' %>
+        </li>
+        <li>
+          <%= link_to 'Contact', '/contact' %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer__links">
+      <div class="h4">Legal</div>
+
+      <ul class="list-unstyled">
+        <li>
+          <%= link_to 'Privacy Policy', '/privacy-policy' %>
+        </li>
+        <li>
+          <%= link_to 'Terms of Service', '/terms-of-service' %>
+        </li>
+        <li>
+          <%= link_to 'Cookie Policy', '/cookie-policy' %>
+        </li>
+        <li>
+          <%= link_to 'Subprocessors', '/subprocessors' %>
+        </li>
+        <li>
+          <%= link_to 'Vulnerability Management Policy', '/vulnerability-management-policy' %>
+        </li>
+        <li>
+          <%= link_to 'Incident Response Policy', '/incident-response-policy' %>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer__credits">
+      <p>Typo CI was created by <%= link_to 'Mike Rogers', 'https://mikerogers.io/', target: '_blank', rel: 'noopener' %> <br />&copy; Typo CI <%= Time.now.year %></p>
+    </div>
+  </footer>
+</div>

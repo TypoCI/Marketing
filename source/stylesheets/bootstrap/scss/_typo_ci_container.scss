@@ -1,0 +1,5 @@
+// Single container class with breakpoint max-widths
+.container {
+  @include make-container();
+  @include make-container-max-widths();
+}
