@@ -1,3 +1,17 @@
+---
+title: Documentation
+description: Configure Typo CI with the .typo-ci.yml file
+---
+
+# Documentation
+
+Typo CI checks Pull Requests for spelling mistakes every time you push your code up to GitHub.
+
+To configure how Typo CI will behave when checking your code, you can add a <code>.typo-ci.yml</code> file to the root of your project. Typo CI will look for this file on your PRs branch.
+
+Below is a sample file:
+
+```yml
 # This is a sample .typo-ci.yml file, it's used to configure how Typo CI will behave.
 # Add it to the root of your project and push it to github.
 ---
@@ -37,3 +51,4 @@ excluded_words:
 
 # Would you like filenames to also be spellchecked?
 spellcheck_filenames: true
+```
