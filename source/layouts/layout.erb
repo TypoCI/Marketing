@@ -12,12 +12,10 @@
     <%#= javascript_link_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Alegreya:400,400i,700,700i|Montserrat:400,700&display=swap" rel="stylesheet" media="all" data-turbolinks-track="reload">
 
-    <% ['180x180', '152x152', '144x144', '72x72'].each do |favicon_size| %>
-      <link rel="apple-touch-icon" sizes="<%= favicon_size %>" href="<%= image_path("apple-touch-icon-#{favicon_size}-precomposed.png") %>" />
-    <% end %>
     <link rel="apple-touch-icon" href="<%= image_path("apple-icon.png") %>" data-turbolinks-track="reload" />
     <link rel="shortcut icon" href="<%= image_path("favicon.png") %>" data-turbolinks-track="reload" />
     <link rel="icon" type="image/ico" href="<%= image_path("favicon.ico") %>" data-turbolinks-track="reload" />
+    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<%= image_path("ms-icon.png") %>">
     <meta name="theme-color" content="#ffffff">
