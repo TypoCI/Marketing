@@ -1,6 +1,6 @@
 # Typo CI - Marketing Site
 
-This is the site is used to promote Typo CI.
+This is the site is used to promote [Typo CI](https://github.com/marketplace/typo-ci).
 
 ## Setup
 
