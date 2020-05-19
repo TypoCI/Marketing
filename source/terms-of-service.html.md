@@ -1,3 +1,7 @@
+---
+title: Terms of Service
+---
+
 <h1>Terms of Service</h1>
 
 <p>Last updated: 16th October, 2019</p>
