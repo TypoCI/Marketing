@@ -4,7 +4,7 @@ This is the site is used to promote [Typo CI](https://github.com/marketplace/typ
 
 ## Setup
 
-1. `git clone git@github.com:PigCI/Marketing.git`
+1. `git clone git@github.com:TypoCI/Marketing.git`
 2. `bundle && yarn`
 3. `bundle exec middleman s`
 
