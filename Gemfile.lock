@@ -183,18 +183,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capybara
-  liquid
-  middleman (~> 4.2)
-  middleman-sprockets
-  middleman-syntax
-  redcarpet
-  rspec (~> 3.9)
-  sass
-  sassc-rails
-  sprockets (~> 3.7.2)
-  tzinfo-data
-  wdm (~> 0.1)
+  capybara!
+  liquid!
+  middleman (~> 4.2)!
+  middleman-sprockets!
+  middleman-syntax!
+  redcarpet!
+  rspec (~> 3.9)!
+  sass!
+  sassc-rails!
+  sprockets (~> 3.7.2)!
+  tzinfo-data!
+  wdm (~> 0.1)!
 
 RUBY VERSION
    ruby 2.6.6p146
