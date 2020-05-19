@@ -1,4 +1,4 @@
-# Typo Ci - Marketing Site
+# Typo CI - Marketing Site
 
 This is site is used to promote Typo CI.
 
