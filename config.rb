@@ -30,11 +30,19 @@ page '/*.txt', layout: false
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
 
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
+helpers do
+  def root_url
+    ENV.fetch('URL') { 'https://typoci.com' }
+  end
+
+  def current_url
+    if current_page.url == '/'
+      root_url + '/'
+    else
+      root_url + current_page.url[0..-1].tr('.html', '')
+    end
+  end
+end
 
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
