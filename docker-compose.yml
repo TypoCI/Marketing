@@ -6,12 +6,11 @@ services:
 
   web:
     image: typoci_marketing:latest
+    mem_limit: 256m
     build:
       context: .
       dockerfile: Dockerfile
       target: development
-    env_file:
-      - .env
     volumes:
       - .:/usr/src/app
       - ~/.docker-data/ruby/2.6.6/bundler:/usr/src/bundler:delegated
@@ -21,6 +20,3 @@ services:
       bundle exec middleman server -p 3001"
     ports:
       - "${PORT:-3001}:3001"
-
-volumes:
-  rails_cache:
