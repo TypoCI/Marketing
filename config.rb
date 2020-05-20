@@ -39,7 +39,7 @@ helpers do
     if current_page.url == '/'
       root_url + '/'
     else
-      root_url + current_page.url[0..-1].tr('.html', '')
+      root_url + current_page.url[0..-1].sub('.html', '')
     end
   end
 end
