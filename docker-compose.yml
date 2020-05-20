@@ -10,8 +10,6 @@ services:
       context: .
       dockerfile: Dockerfile
       target: development
-    env_file:
-      - .env
     volumes:
       - .:/usr/src/app
       - ~/.docker-data/ruby/2.6.6/bundler:/usr/src/bundler:delegated
