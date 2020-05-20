@@ -2,6 +2,7 @@ ruby File.read('.ruby-version').chomp
 
 source 'https://rubygems.org' do
   gem 'middleman', '~> 4.2'
+  gem 'middleman-minify-html'
   gem 'middleman-sprockets'
   gem 'middleman-syntax'
 
