@@ -6,10 +6,12 @@ LABEL maintainer="Mike Rogers <me@mikerogers.io>"
 ENV BUILD_DEPS="curl tar wget linux-headers bash" \
     DEV_DEPS="ruby-dev build-base postgresql-dev zlib-dev libxml2-dev libxslt-dev readline-dev tzdata git nodejs vim"
 
-RUN apk add --update --upgrade $BUILD_DEPS $DEV_DEPS
+RUN apk update && apk upgrade
+
+RUN apk add --no-cache $BUILD_DEPS $DEV_DEPS
 
 # Install Yarn
-RUN apk add --update yarn
+RUN apk add --no-cache yarn
 
 # Add the current apps files into docker image
 RUN mkdir -p /usr/src/app
@@ -31,6 +33,9 @@ RUN bundle config --global silence_root_warning 1 && echo -e 'gem: --no-document
 RUN mkdir -p /usr/src/bundler
 RUN bundle config path /usr/src/bundler
 
+# Clean up caches we won't need anymore.
+RUN rm -fr /var/cache/apk/* && rm -fr /tmp/*
+
 EXPOSE 3001
 CMD ["bundle", "exec", "middleman", "server", "-p", "3001"]
 
@@ -39,7 +44,7 @@ FROM development AS production
 # Install Ruby Gems
 COPY Gemfile /usr/src/app
 COPY Gemfile.lock /usr/src/app
-RUN bundle check || bundle install --jobs=$(nproc)
+RUN "bundle check || bundle install --jobs=$(nproc)"
 
 # Install Yarn Libraries
 COPY package.json /user/src/app

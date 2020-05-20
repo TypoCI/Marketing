@@ -6,6 +6,7 @@ services:
 
   web:
     image: typoci_marketing:latest
+    mem_limit: 256m
     build:
       context: .
       dockerfile: Dockerfile
@@ -19,6 +20,3 @@ services:
       bundle exec middleman server -p 3001"
     ports:
       - "${PORT:-3001}:3001"
-
-volumes:
-  rails_cache:
