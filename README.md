@@ -1,4 +1,14 @@
-# Typo CI - Marketing Site
+<p align="center">
+  <img src="https://typoci.com/images/typo-ci-logo.svg" alt="Typo CI Logo - It's a sword surrounded by brackets" width="96">
+</p>
+
+<h1 align="center">
+  Typo CI - Marketing Site
+</h1>
+
+<p align="center">
+Checks for spelling errors within commits by listening to webhooks from Heroku.
+</p>
 
 This is the site is used to promote [Typo CI](https://github.com/marketplace/typo-ci).
 
