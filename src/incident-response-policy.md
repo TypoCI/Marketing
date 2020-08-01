@@ -1,6 +1,7 @@
 ---
 title: Incident Response Policy
 description: The purpose of the policy is to establish the goals and the vision for the breach response process.
+layout: default
 ---
 
 # Incident Response Policy

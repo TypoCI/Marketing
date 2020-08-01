@@ -1,8 +1,10 @@
-@import 'bootstrap/bootstrap';
-@import 'components/footer';
-@import 'components/header';
-@import 'components/highlight';
-@import 'components/how_it_works';
-@import 'components/jumbotron';
-@import 'components/logo';
-@import 'components/product_summary';
+@import "bootstrap/bootstrap";
+@import "components/footer";
+@import "components/header";
+@import "components/highlight";
+@import "components/how_it_works";
+@import "components/jumbotron";
+@import "components/logo";
+@import "components/product_summary";
+
+@import "pygments-css/default.css";

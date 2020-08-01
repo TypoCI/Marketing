@@ -1,6 +1,7 @@
 ---
 title: Documentation
 description: Configure Typo CI with the .typo-ci.yml file
+layout: default
 ---
 
 # Documentation

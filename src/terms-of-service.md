@@ -1,5 +1,6 @@
 ---
 title: Terms of Service
+layout: default
 ---
 
 # Terms of Service

@@ -1,6 +1,7 @@
 ---
 title: Contact
 description: Need help with Typo CI? Email me.
+layout: default
 ---
 
 # Contact Typo CI
