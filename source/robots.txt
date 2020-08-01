@@ -1,4 +1,0 @@
-Sitemap: https://typoci.com/sitemap.txt
-
-User-agent: *
-Allow: /
