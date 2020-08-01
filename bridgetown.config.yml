@@ -18,6 +18,9 @@
 baseurl: "" # OPTIONAL: the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. https://example.com
 
+# Default is "output", I kept auto completing "git push o" to "git push output", so renaming this.
+destination: build
+
 permalink: pretty
 
 # timezone: America/Los_Angeles
