@@ -11,7 +11,7 @@
   bundle = true
   minify = true
 [build.processing.html]
-  pretty_urls = false
+  pretty_urls = true
 [build.processing.images]
   compress = true
 
