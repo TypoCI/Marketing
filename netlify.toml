@@ -1,5 +1,5 @@
 [build]
-  command = "webpack --mode production && bundle exec bridgetown build"
+  command = "yarn deploy"
   publish = "build"
 
 [build.environment]
