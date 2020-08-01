@@ -2,10 +2,6 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 
-const PATHS = {
-  src: path.join(__dirname, 'src')
-}
-
 module.exports = {
   entry: "./frontend/javascript/index.js",
   devtool: "source-map",
@@ -58,9 +54,9 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
-              ident: 'postcss',
+              ident: "postcss",
             },
           },
           {
