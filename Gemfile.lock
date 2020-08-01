@@ -40,8 +40,13 @@ GEM
     bridgetown-inline-svg (1.1.1)
       bridgetown (>= 0.15, < 2.0)
       svg_optimizer (~> 0.2.5)
+    bridgetown-minify-html (0.2.0)
+      bridgetown (>= 0.15, < 2.0)
+      htmlcompressor (>= 0.4, < 1.0)
     bridgetown-paginate (0.16.0)
       bridgetown-core (= 0.16.0)
+    bridgetown-seo-tag (3.0.5)
+      bridgetown (>= 0.15.0, < 2.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.6)
     erubi (1.9.0)
@@ -51,6 +56,7 @@ GEM
       faraday (~> 1.0)
     ffi (1.13.1)
     forwardable-extended (2.6.0)
+    htmlcompressor (0.4.0)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     kramdown (2.3.0)
@@ -97,6 +103,8 @@ PLATFORMS
 DEPENDENCIES
   bridgetown (~> 0.16.0)
   bridgetown-inline-svg (~> 1.1.0)
+  bridgetown-minify-html
+  bridgetown-seo-tag
 
 BUNDLED WITH
    2.1.4

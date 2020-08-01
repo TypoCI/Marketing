@@ -23,4 +23,7 @@ destination: build
 
 permalink: pretty
 
+svg:
+  optimise: true
+
 # timezone: America/Los_Angeles
