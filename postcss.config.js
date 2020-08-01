@@ -27,6 +27,7 @@ if (process.env.BRIDGETOWN_ENV === "production") {
         './src/**/*.liquid',
       ],
     }),
+    require('cssnano')({ preset: 'default' }),
   )
 };
 
