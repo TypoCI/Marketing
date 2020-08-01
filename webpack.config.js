@@ -1,6 +1,12 @@
 const path = require("path");
+const glob = require('glob')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+
+const PATHS = {
+  src: path.join(__dirname, 'src')
+}
 
 module.exports = {
   entry: "./frontend/javascript/index.js",
@@ -13,7 +19,7 @@ module.exports = {
     children: false,
   },
   output: {
-    path: path.resolve(__dirname, "output", "_bridgetown", "static", "js"),
+    path: path.resolve(__dirname, "build", "_bridgetown", "static", "js"),
     filename: "all.[contenthash].js",
   },
   resolve: {
@@ -22,6 +28,9 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "../css/all.[contenthash].css",
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
     }),
     new ManifestPlugin({
       fileName: path.resolve(__dirname, ".bridgetown-webpack", "manifest.json"),

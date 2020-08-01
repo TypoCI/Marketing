@@ -23,7 +23,7 @@ Temporary Items
 .apdisk
 
 # Bridgetown
-output
+build
 .bridgetown-cache
 .bridgetown-metadata
 .bridgetown-webpack
