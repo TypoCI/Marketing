@@ -1,8 +1,6 @@
 const path = require("path");
-const glob = require('glob')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src')
@@ -28,9 +26,6 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "../css/all.[contenthash].css",
-    }),
-    new PurgecssPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
     }),
     new ManifestPlugin({
       fileName: path.resolve(__dirname, ".bridgetown-webpack", "manifest.json"),
@@ -62,6 +57,12 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+            },
+          },
           {
             loader: "sass-loader",
             options: {
