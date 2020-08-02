@@ -1,0 +1,15 @@
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.metadata.myvariable }}.
+
+title: Typo CI
+tagline: Check your code for common spelling mistakes and correct them before you merge them
+email: support@typoci.com
+
+author: Mike Rogers
+
+lang: en_GB
+twitter:
+  username: MikeRogers0

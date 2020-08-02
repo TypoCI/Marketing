@@ -1,23 +1,25 @@
-ruby File.read('.ruby-version').chomp
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-source 'https://rubygems.org' do
-  gem 'middleman', '~> 4.3'
-  gem 'middleman-minify-html'
-  gem 'middleman-sprockets'
-  gem 'middleman-syntax'
+# Hello! This is where you manage which Bridgetown version is used to run.
+# When you want to use a different version, change it below, save the
+# file and run `bundle install`. Run Bridgetown with `bundle exec`, like so:
+#
+#   bundle exec bridgetown serve
+#
+# This will help ensure the proper Bridgetown version is running.
+#
+# To install a plugin, simply run bundle add and specify the group
+# "bridgetown_plugins". For example:
+#
+#   bundle add some-new-plugin -g bridgetown_plugins
+#
+# Happy Bridgetowning!
 
-  gem 'liquid', require: false
-  gem 'redcarpet'
+gem "bridgetown", "~> 0.16.0"
 
-  gem 'sass'
-  gem 'sassc-rails'
-  gem 'sprockets', '~> 3.7.2'
-
-  gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby, :x64_mingw]
-  gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw, :x64_mingw]
-
-  group :development, :test do
-    gem 'capybara'
-    gem 'rspec', '~> 3.9'
-  end
+group :bridgetown_plugins do
+  gem "bridgetown-inline-svg", "~> 1.1.0"
+  gem "bridgetown-seo-tag"
+  gem "bridgetown-minify-html" #, github: 'MikeRogers0/bridgetown-minify-html'
 end

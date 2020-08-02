@@ -1,58 +1,47 @@
-FROM ruby:2.6.6-alpine AS development
+FROM ruby:2.7.1-alpine AS builder
 
 LABEL maintainer="Mike Rogers <me@mikerogers.io>"
 
-# Install the Essentials
-ENV BUILD_DEPS="curl tar wget linux-headers bash" \
-    DEV_DEPS="ruby-dev build-base postgresql-dev zlib-dev libxml2-dev libxslt-dev readline-dev tzdata git nodejs vim"
+RUN apk add --no-cache \
+    #
+    # required
+    build-base libffi-dev \
+    nodejs yarn tzdata \
+    zlib-dev libxml2-dev libxslt-dev readline-dev bash \
+    # Nice to haves
+    git vim \
+    #
+    # Fixes watch file issues with things like HMR
+    libnotify-dev
 
-RUN apk update && apk upgrade
-
-RUN apk add --no-cache $BUILD_DEPS $DEV_DEPS
-
-# Install Yarn
-RUN apk add --no-cache yarn
+FROM builder as development
 
 # Add the current apps files into docker image
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-# Set up environment
 ENV PATH /usr/src/app/bin:$PATH
 
-# Add some helpers to reduce typing when inside the containers
-RUN echo 'alias bx="bundle exec"' >> ~/.bashrc
-
-# Set ruby version
-COPY .ruby-version /usr/src/app
-
 # Install latest bundler
-RUN gem update --system && gem install bundler:2.1.4
-RUN bundle config --global silence_root_warning 1 && echo -e 'gem: --no-document' >> /etc/gemrc
+RUN bundle config --global silence_root_warning 1
 
-RUN mkdir -p /usr/src/bundler
-RUN bundle config path /usr/src/bundler
-
-# Clean up caches we won't need anymore.
-RUN rm -fr /var/cache/apk/* && rm -fr /tmp/*
-
-EXPOSE 3001
-CMD ["bundle", "exec", "middleman", "server", "-p", "3001"]
+EXPOSE 4000
+CMD ["yarn", "start", "--host", "0.0.0.0"]
 
 FROM development AS production
 
 # Install Ruby Gems
 COPY Gemfile /usr/src/app
 COPY Gemfile.lock /usr/src/app
-RUN "bundle check || bundle install --jobs=$(nproc)"
+RUN bundle check || bundle install --jobs=$(nproc)
 
 # Install Yarn Libraries
-COPY package.json /user/src/app
-COPY yarn.lock /user/src/app
+COPY package.json /usr/src/app
+COPY yarn.lock /usr/src/app
 RUN yarn install --check-files
 
 # Copy the rest of the app
 COPY . /usr/src/app
 
 # Compile the assets
-RUN RAILS_ENV=production RACK_ENV=production NODE_ENV=production bundle exec middleman build
+RUN RACK_ENV=production NODE_ENV=production yarn build

@@ -1,15 +1,19 @@
 [build]
-  command = "middleman build --verbose"
+  command = "yarn deploy"
   publish = "build"
+
+[build.environment]
+  NODE_VERSION = "12"
+  BRIDGETOWN_ENV = "production"
 
 [build.processing]
   skip_processing = false
 [build.processing.css]
-  bundle = true
-  minify = true
+  bundle = false
+  minify = false
 [build.processing.js]
-  bundle = true
-  minify = true
+  bundle = false
+  minify = false
 [build.processing.html]
   pretty_urls = true
 [build.processing.images]
@@ -31,13 +35,3 @@
   for = "/*.(png|jpg|js|css|svg|woff|ttf|eot|ico)"
   [headers.values]
     Cache-Control = "public, max-age=31536000, s-max-age=31536000"
-
-[[redirects]]
-  from = "/wp-login.php"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/wp-admin"
-  to = "/"
-  status = 301
