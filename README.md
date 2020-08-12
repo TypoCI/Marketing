@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center">
-Checks for spelling errors within commits by listening to webhooks from Heroku.
+Checks for spelling errors within commits by listening to webhooks from GitHub.
 </p>
 
 ## Setup & Running Locally
