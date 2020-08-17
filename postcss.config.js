@@ -20,13 +20,6 @@ let environment = {
 // Only add these in production as they slow down the dev build time a bunch.
 if (process.env.BRIDGETOWN_ENV === "production") {
   environment.plugins.push(
-    require('@fullhuman/postcss-purgecss')({
-      content: [
-        './src/**/*.html',
-        './src/**/*.md',
-        './src/**/*.liquid',
-      ],
-    }),
     require('cssnano')({ preset: 'default' }),
   )
 };
