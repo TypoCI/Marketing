@@ -28,7 +28,7 @@ jobs:
     timeout-minutes: 4
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
     steps:
-    - name: TypoCheck
+    - name: Typo CI (GitHub Action)
       uses: typoci/spellcheck-action@master
       with:
         typo_ci_license_key: ADD-YOUR-LICENSE-KEY-HERE
