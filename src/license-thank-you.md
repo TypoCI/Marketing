@@ -11,6 +11,7 @@ You should have just received an email with the subject line _"You bought Typo C
 
 Within that email, you should have a license key. Update your `.github/workflows/spellcheck.yml` with the following, replacing `ADD-YOUR-LISENSE-KEY-HERE` with your key & you're good to go:
 
+{% raw %}
 ```yml
 # Add to: .github/workflows/spellcheck.yml
 name: Typo CI
@@ -34,3 +35,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+{% endraw %}
