@@ -6,8 +6,8 @@ class PurgeCSS < SiteBuilder
         unless File.exist?(purgecss_file)
           config_js = <<~PURGE
               module.exports = {
-                content: ['frontend/javascript/*.js','./output/**/*.html'],
-                output: "./output/_bridgetown/static/css"
+                content: ['frontend/javascript/*.js','./build/**/*.html'],
+                output: "./build/_bridgetown/static/css"
               }
           PURGE
           File.write(purgecss_file, config_js.strip)
@@ -16,7 +16,7 @@ class PurgeCSS < SiteBuilder
         if File.exist?(manifest_file)
           manifest = JSON.parse(File.read(manifest_file))
           css_file = manifest["main.css"].split("/").last
-          css_path = ["output", "_bridgetown", "static", "css", css_file].join("/")
+          css_path = ["build", "_bridgetown", "static", "css", css_file].join("/")
           Bridgetown.logger.info "PurgeCSS", "Purging \#{css_file}"
           oldsize = File.stat(css_path).size / 1000
           system "./node_modules/.bin/purgecss -c purgecss.config.js -css \#{css_path}"
