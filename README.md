@@ -6,10 +6,6 @@
   Typo CI - Marketing Site
 </h1>
 
-<p align="center">
-Checks for spelling errors within commits by listening to webhooks from GitHub.
-</p>
-
 ## Setup & Running Locally
 
 Clone down the repo, install [Docker](https://hub.docker.com/editions/community/docker-ce-desktop-mac/) & run:
