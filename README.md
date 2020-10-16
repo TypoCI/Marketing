@@ -8,18 +8,20 @@
 
 ## Setup & Running Locally
 
-Clone down the repo, install [Docker](https://hub.docker.com/editions/community/docker-ce-desktop-mac/) & run:
+Clone down the repo, run:
 
 ```bash
-docker-compose up
+$ bundle && yarn
+$ yarn start
 ```
 
 Then navigate your browser to https://127.0.0.1:4000/ to see your site.
 
 ## Useful Links
 
-* [Typo CI](http://typoci.com/)
+* [Typo CI - Homepage](http://typoci.com/)
+* [Typo CI - GitHub App](https://github.com/marketplace/typo-ci)
+* [Typo CI - GitHub Action](https://github.com/marketplace/actions/typo-ci-spellcheck-action)
 * [Bridgetown Documentation](https://www.bridgetownrb.com/docs/)
 * [Bridgetown Plugins](https://www.bridgetownrb.com/plugins/)
 * [Netlify](https://www.netlify.com/)
-* [Docker-Bridgetown-Installer](https://github.com/Ruby-Starter-Kits/Docker-Bridgetown-Installer)
