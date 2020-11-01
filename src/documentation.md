@@ -26,6 +26,7 @@ Below is a sample file:
 # it
 # pt
 # pt_BR
+# tr
 dictionaries:
   - en
   - en_GB
