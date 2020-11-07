@@ -31,7 +31,7 @@
     "webpack-manifest-plugin": "^2.2.0"
   },
   "dependencies": {
-    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@fullhuman/postcss-purgecss": "^3.0.0",
     "bootstrap": "^4.5.0",
     "cssnano": "^4.1.10",
     "postcss-custom-properties": "^9.1.1",
