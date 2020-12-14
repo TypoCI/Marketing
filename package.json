@@ -40,6 +40,6 @@
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.2.3",
     "postcss-svgo": "^4.0.2",
-    "purgecss-webpack-plugin": "^2.3.0"
+    "purgecss-webpack-plugin": "^3.1.0"
   }
 }
