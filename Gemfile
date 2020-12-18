@@ -16,10 +16,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #
 # Happy Bridgetowning!
 
-gem "bridgetown", "~> 0.16.0"
+gem "bridgetown"
 
 group :bridgetown_plugins do
-  gem "bridgetown-inline-svg", "~> 1.1.0"
+  gem "bridgetown-inline-svg"
   gem "bridgetown-seo-tag"
   gem "bridgetown-minify-html" #, github: 'MikeRogers0/bridgetown-minify-html'
 end
