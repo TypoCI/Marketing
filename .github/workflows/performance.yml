@@ -1,8 +1,10 @@
 name: 'Performance'
 
 on:
+  status:
+  check_run:
   check_suite:
-    types: [rerequested, completed]
+  deployment:
   
 jobs:
   lighthouse:
