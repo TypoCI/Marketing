@@ -1,0 +1,15 @@
+name: 'Performance'
+
+on:
+  check_suite:
+    types: [rerequested, completed]
+  
+jobs:
+  lighthouse:
+    name: 'Lighthouse'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Output ENVs
+        run: |
+          printenv
