@@ -1,0 +1,20 @@
+name: 'Performance'
+
+on:
+  check_run:
+    types: [completed]
+  check_suite:
+    types: [completed]
+  deployment:
+  deployment_status:
+  status:
+  
+jobs:
+  lighthouse:
+    name: 'Lighthouse'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Output ENVs
+        run: |
+          printenv
