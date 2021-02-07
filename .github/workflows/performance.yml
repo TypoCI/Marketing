@@ -13,8 +13,11 @@ jobs:
   lighthouse:
     name: 'Lighthouse'
     runs-on: ubuntu-latest
-
     steps:
+      - name: Output Event Details
+        run: |
+          echo ${{ github.event_name }}
+          echo ${{ github.event }}
       - name: Output ENVs
         run: |
           printenv
