@@ -1,6 +1,7 @@
 name: 'Performance'
 
 on:
+  check_run:
   status:
 
 jobs:
@@ -11,9 +12,17 @@ jobs:
     steps:
       - name: Output Event Details
         run: |
+          echo "github.event_name:"
           echo ${{ github.event_name }}
+
+          echo "github.event.state:"
           echo ${{ github.event.state }}
+
+          echo "github.event.target_url:"
           echo ${{ github.event.target_url }}
+
+          echo "github.check_run.name:"
+          echo ${{ github.check_run.name }}
       - name: Output ENVs
         run: |
           printenv
