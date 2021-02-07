@@ -5,13 +5,13 @@ on:
     types: [completed]
   check_suite:
     types: [completed]
-  deployment:
-  deployment_status:
   status:
   pull_request:
-  
+  push:
+
 jobs:
   lighthouse:
+    # if: "contains(github.actor, 'netlify[bot]')"
     name: 'Lighthouse'
     runs-on: ubuntu-latest
     steps:
