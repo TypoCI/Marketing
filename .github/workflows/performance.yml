@@ -1,20 +1,19 @@
 name: 'Performance'
 
 on:
-  check_run:
-    types: [completed]
-  check_suite:
-    types: [completed]
-  deployment:
-  deployment_status:
-  status:
-  
+  status: [success]
+
 jobs:
   lighthouse:
+    if: "contains(github.actor, 'netlify[bot]')"
     name: 'Lighthouse'
     runs-on: ubuntu-latest
-
     steps:
+      - name: Output Event Details
+        run: |
+          echo ${{ github.event_name }}
+          echo ${{ github.event.state }}
+          echo ${{ github.event.target_url }}
       - name: Output ENVs
         run: |
           printenv
