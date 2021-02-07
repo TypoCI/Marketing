@@ -8,6 +8,7 @@ on:
   deployment:
   deployment_status:
   status:
+  pull_request:
   
 jobs:
   lighthouse:
