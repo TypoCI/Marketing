@@ -5,6 +5,7 @@ on:
   check_run:
   check_suite:
   deployment:
+  push:
   
 jobs:
   lighthouse:
