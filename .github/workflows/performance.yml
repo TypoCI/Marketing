@@ -1,11 +1,15 @@
 name: 'Performance'
 
 on:
-  status:
   check_run:
+    types: [completed]
   check_suite:
+    types: [completed]
   deployment:
-  push:
+  deployment_status:
+  status:
+  release:
+  pull_request:
   
 jobs:
   lighthouse:
@@ -15,5 +19,4 @@ jobs:
     steps:
       - name: Output ENVs
         run: |
-          echo "hi hi hi"
           printenv
