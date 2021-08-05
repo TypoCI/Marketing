@@ -62,7 +62,9 @@ module.exports = {
           {
             loader: "sass-loader",
             options: {
+              implementation: require("sass"),
               sassOptions: {
+                fiber: false,
                 includePaths: [
                   path.resolve(__dirname, "src/_components")
                 ],
